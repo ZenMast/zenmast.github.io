@@ -1,10 +1,22 @@
 ---
 import EntryLayout from "@components/videos/EntryLayout.astro";
-import { getEntry } from "@lib/contentParser";
+//import { getEntry } from "@lib/contentParser";
 import type { VideosEntry } from "@/types";
+import { sortByDate } from "@lib/sortFunctions";
+import { getEntries } from "@lib/contentParser";
 
-const { entry } = Astro.params;
-const videoEntry = (await getEntry("videos", entry)) as VideosEntry;
+export async function getStaticPaths() {
+  const entries = await getEntries("videos", sortByDate) as VideosEntry[];
+  const paths = entries.map((entry) => ({
+    params: {
+      entry: entry.id,
+    },
+    props: { entry },
+  }));
+  return paths;
+}
+
+const { entry } = Astro.props;
 ---
 
-<EntryLayout entry={videoEntry} />
+<EntryLayout entry={entry} />

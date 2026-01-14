@@ -24,7 +24,7 @@ const { title, description, youtubeId, tags } = entry.data;
           <!-- Video -->
           <div class="col basis-full p-2 min-w-72">
             <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
-              <Youtube id={youtubeId} title={title} />
+              <Youtube client:load id={youtubeId} title={title} />
             </div>
           </div>
           <!-- Tags -->
