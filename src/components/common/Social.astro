@@ -16,13 +16,19 @@ import {
 
 interface Props {
   links?: SocialLinks;
+  containerClass?: string;
+  svgClass?: string;
 }
 
-const { links } = Astro.props;
+const { links, containerClass = "", svgClass = "" } = Astro.props;
 
 const liClass = "inline-block px-1 intersect:animate-fade opacity-0";
-const iconClass =
-  "glass-t rounded text-txt-p dark:text-darkmode-txt-p flex h-9 w-9 items-center justify-center text-center";
+const anchorBaseClass =
+  "glass-t rounded text-txt-p dark:text-darkmode-txt-p flex items-center justify-center text-center";
+const anchorDefaultSize = "h-9 w-9";
+const anchorClass = `${anchorBaseClass} ${containerClass || anchorDefaultSize}`.trim();
+const svgDefaultClass = "w-6 h-6";
+const svgClassCombined = svgClass ? svgClass : svgDefaultClass;
 ---
 
 {
@@ -31,140 +37,140 @@ const iconClass =
       {links.discord && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Discord"
             href={links.discord}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Discord</span>
-            <FaDiscord className="w-6 h-6" />
+            <FaDiscord className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.email && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Email"
             href={`mailto:${links.email}`}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Email</span>
-            <FaEnvelope className="w-6 h-6" />
+            <FaEnvelope className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.facebook && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Facebook"
             href={links.facebook}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Facebook</span>
-            <FaFacebook className="w-6 h-6" />
+            <FaFacebook className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.github && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="GitHub"
             href={links.github}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">GitHub</span>
-            <FaGithub className="w-6 h-6" />
+            <FaGithub className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.instagram && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Instagram"
             href={links.instagram}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Instagram</span>
-            <FaInstagram className="w-6 h-6" />
+            <FaInstagram className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.linkedIn && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="LinkedIn"
             href={links.linkedIn}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">LinkedIn</span>
-            <FaLinkedin className="w-6 h-6" />
+            <FaLinkedin className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.pinterest && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Pinterest"
             href={links.pinterest}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Pinterest</span>
-            <FaPinterest className="w-6 h-6" />
+            <FaPinterest className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.tiktok && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="TikTok"
             href={links.tiktok}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">TikTok</span>
-            <FaTiktok className="w-6 h-6" />
+            <FaTiktok className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.website && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="Website"
             href={links.website}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">Website</span>
-            <FaGlobe className="w-6 h-6" />
+            <FaGlobe className={svgClassCombined} />
           </a>
         </li>
       )}
       {links.youtube && (
         <li class={liClass}>
           <a
-            class={iconClass}
+            class={anchorClass}
             aria-label="YouTube"
             href={links.youtube}
             target="_blank"
             rel="noopener noreferrer nofollow"
           >
             <span class="sr-only">YouTube</span>
-            <FaYoutube className="w-6 h-6" />
+            <FaYoutube className={svgClassCombined} />
           </a>
         </li>
       )}

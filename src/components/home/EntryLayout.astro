@@ -37,24 +37,15 @@ const { image, imageAlt, title, content, button } = entry.data;
           }
           <h1 set:html={markdownify(title)} class="mb-4" />
           <p set:html={markdownify(content)} class="mb-8" />
-          {
-            button && (
-              <Button
-                label={button.label}
-                link={button.link}
-                newtab
-                hoverInvert
-                color=""
-              />
-            )
-          }
           <div class="flex justify-center mt-8">
             <Social
               links={{
                 email: "romancyber@pm.me",
                 youtube: "https://youtu.be/YxIf6qLtNU4",
-                linkedIn: "https://www.linkedin.com/",
+                linkedIn: "https://linkedin.com/in/rmanfe",
               }}
+              containerClass="h-20 w-20"
+              svgClass="w-10 h-10"
             />
           </div>
         </div>
