@@ -1,0 +1,10 @@
+---
+import EntryLayout from "@components/videos/EntryLayout.astro";
+import { getEntry } from "@lib/contentParser";
+import type { VideosEntry } from "@/types";
+
+const { entry } = Astro.params;
+const videoEntry = (await getEntry("videos", entry)) as VideosEntry;
+---
+
+<EntryLayout entry={videoEntry} />

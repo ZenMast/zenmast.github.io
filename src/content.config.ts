@@ -75,6 +75,15 @@ const docs = defineCollection({
     }),
 });
 
+const videos = defineCollection({
+  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/videos" }),
+  schema: searchable.extend({
+    date: z.date().optional(),
+    youtubeId: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 const home = defineCollection({
   loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/home" }),
   schema: ({ image }) =>
@@ -168,6 +177,7 @@ export const collections = {
   authors,
   blog,
   docs,
+  videos,
   home,
   indexCards,
   poetry,

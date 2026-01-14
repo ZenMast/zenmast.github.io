@@ -7,6 +7,7 @@ export type ReviewsEntry = CollectionEntry<"reviews">;
 export type AuthorsEntry = CollectionEntry<"authors">;
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
+export type VideosEntry = CollectionEntry<"videos">;
 export type HomeEntry = CollectionEntry<"home">;
 export type IndexCardsEntry = CollectionEntry<"indexCards">;
 export type PoetryEntry = CollectionEntry<"poetry">;
@@ -19,6 +20,7 @@ export type SearchableEntry =
   | AuthorsEntry
   | BlogEntry
   | DocsEntry
+  | VideosEntry
   | PoetryEntry
   | PortfolioEntry
   | RecipesEntry

@@ -1,0 +1,29 @@
+---
+import CollectionLayout from "@components/videos/CollectionLayout.astro";
+import { getTaxa } from "@lib/taxonomyParser";
+import { getIndex, getEntries } from "@lib/contentParser";
+import { sortByDate } from "@lib/sortFunctions";
+import type { VideosEntry } from "@/types";
+
+const entryIndex = (await getIndex("videos")) as VideosEntry;
+const entries = (await getEntries("videos", sortByDate)) as VideosEntry[];
+
+const { page } = Astro.params;
+
+const tags = await getTaxa("videos", "tags");
+
+const entriesPerPage = 6;
+const currentPageIndex = page && !isNaN(Number(page)) ? Number(page) : 1;
+const pageCount = Math.ceil(entries.length / entriesPerPage);
+const indexOfLastEntry = currentPageIndex * entriesPerPage;
+const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
+---
+
+<CollectionLayout
+  entryIndex={entryIndex}
+  entries={currentEntries}
+  tags={tags}
+  pageIndex={currentPageIndex}
+  pageCount={pageCount}
+/>

@@ -1,0 +1,66 @@
+---
+import type { VideosEntry } from "@/types";
+import Share from "@components/common/Share.astro";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import { upperHumanize, markdownify, slugify } from "@lib/textConverter";
+import Youtube from "@components/common/shortcodes/Youtube.tsx";
+import { FaHashtag } from "react-icons/fa";
+
+interface Props {
+  entry: VideosEntry;
+}
+
+const { entry } = Astro.props;
+const { title, description, youtubeId, tags } = entry.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10 flex flex-wrap content-start">
+          <!-- Title -->
+          <h1 set:html={title} class="p-2 col basis-full min-w-72" />
+          <!-- Video -->
+          <div class="col basis-full p-2 min-w-72">
+            <div class="glass rounded-lg intersect:animate-fadeDown opacity-0">
+              <Youtube id={youtubeId} title={title} />
+            </div>
+          </div>
+          <!-- Tags -->
+          {
+            tags && tags.length > 0 && (
+              <div class="col basis-full p-2 min-w-72">
+                <div class="flex flex-wrap gap-2">
+                  {
+                    tags.map((tag) => (
+                      <a
+                        href={`/videos/tags/${slugify(tag)}`}
+                        class="glass rounded-lg px-2 py-1 text-sm hover:opacity-80 transition-opacity"
+                      >
+                        <FaHashtag className="inline mr-1" />
+                        {upperHumanize(tag)}
+                      </a>
+                    ))
+                  }
+                </div>
+              </div>
+            )
+          }
+          <!-- Description -->
+          {
+            description && (
+              <div class="col basis-full p-2 min-w-72">
+                <div class="prose prose-lg max-w-none" set:html={markdownify(description)} />
+              </div>
+            )
+          }
+          <!-- Share -->
+          <div class="col basis-full p-2 min-w-72">
+            <Share />
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

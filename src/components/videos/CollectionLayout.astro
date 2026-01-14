@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import VideoCard from "@components/videos/Card.astro";
+import Pagination from "@components/common/Pagination.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import VideoSidebar from "@components/videos/Sidebar.astro";
+import type { VideosEntry } from "@/types";
+
+interface Props {
+  entryIndex: VideosEntry;
+  entries: VideosEntry[];
+  tags: string[];
+  pageIndex: number;
+  pageCount: number;
+}
+
+const { entryIndex, entries, tags, pageIndex, pageCount }: Props = Astro.props;
+---
+
+<BaseLayout
+  title={entryIndex.data.title}
+  image={entryIndex.data.image?.src}
+  description={entryIndex.data.description}
+>
+  <PageHeader title={entryIndex.data.title} />
+  <section class="section m-2">
+    <div class="flex container">
+      <div class="row px-0 mx-0 w-full">
+        <!-- videos -->
+        <div class="col-12 lg:col-8 lg:p-0">
+          <div class="row">
+            {
+              entries.map((entry) => (
+                <div class="md:col-6 lg:col-6 h-min p-2">
+                  <VideoCard entry={entry} />
+                </div>
+              ))
+            }
+          </div>
+          <Pagination
+            collection="videos"
+            pageIndex={pageIndex}
+            pageCount={pageCount}
+          />
+        </div>
+        <!-- sidebar -->
+        <div class="col-12 lg:col-4 lg:p-0">
+          <VideoSidebar tags={tags} />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
