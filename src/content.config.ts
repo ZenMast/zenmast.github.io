@@ -24,8 +24,8 @@ const social = z.object({
   youtube: z.string().optional(),
 });
 
-const movies = defineCollection({
-  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/movies" }),
+const reviews = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/reviews" }),
   schema: ({ image }) =>
     searchable.extend({
       image: image().optional(),
@@ -164,7 +164,7 @@ const terms = defineCollection({
 
 // Export collections
 export const collections = {
-  movies,
+  reviews,
   authors,
   blog,
   docs,

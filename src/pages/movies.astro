@@ -1,9 +1,0 @@
----
-import type { MoviesEntry } from "@/types";
-import EntryLayout from "@components/movies/EntryLayout.astro";
-import { getIndex } from "@lib/contentParser";
-
-const entry = (await getIndex("movies")) as MoviesEntry;
----
-
-<EntryLayout entry={entry} />

@@ -1,0 +1,9 @@
+---
+import type { ReviewsEntry } from "@/types";
+import EntryLayout from "@components/reviews/EntryLayout.astro";
+import { getIndex } from "@lib/contentParser";
+
+const entry = (await getIndex("reviews")) as ReviewsEntry;
+---
+
+<EntryLayout entry={entry} />
