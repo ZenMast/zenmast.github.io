@@ -1,11 +1,20 @@
 ---
 import CollectionLayout from "@components/videos/CollectionLayout.astro";
-import { getTaxa, taxonomyFilter } from "@lib/taxonomyParser";
+import { getTaxa } from "@lib/taxonomyParser";
+import taxonomyFilter from "@lib/taxonomyFilter";
 import { getIndex, getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
 import type { VideosEntry } from "@/types";
 
-const { tag } = Astro.params;
+export async function getStaticPaths() {
+  const tags = await getTaxa("videos", "tags");
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
 
 const entryIndex = (await getIndex("videos")) as VideosEntry;
 const allEntries = (await getEntries("videos", sortByDate)) as VideosEntry[];
