@@ -9,7 +9,6 @@ export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
 export type VideosEntry = CollectionEntry<"videos">;
 export type HomeEntry = CollectionEntry<"home">;
-export type IndexCardsEntry = CollectionEntry<"indexCards">;
 export type PortfolioEntry = CollectionEntry<"portfolio">;
 export type TermsEntry = CollectionEntry<"terms">;
 
