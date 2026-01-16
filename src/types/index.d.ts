@@ -4,7 +4,6 @@ import type { MarkdownHeading } from "astro";
 export type GenericEntry = CollectionEntry<CollectionKey>;
 
 export type ReviewsEntry = CollectionEntry<"reviews">;
-export type AuthorsEntry = CollectionEntry<"authors">;
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
 export type VideosEntry = CollectionEntry<"videos">;
@@ -14,7 +13,6 @@ export type TermsEntry = CollectionEntry<"terms">;
 
 export type SearchableEntry =
   | ReviewsEntry
-  | AuthorsEntry
   | BlogEntry
   | DocsEntry
   | VideosEntry

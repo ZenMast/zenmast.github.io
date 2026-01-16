@@ -33,20 +33,6 @@ const reviews = defineCollection({
     }),
 });
 
-const authors = defineCollection({
-  loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
-    base: "./src/content/authors",
-  }),
-  schema: ({ image }) =>
-    searchable.extend({
-      email: z.string().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default(""),
-      social: social.optional(),
-    }),
-});
-
 const blog = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
@@ -54,7 +40,6 @@ const blog = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
       categories: z.array(z.string()).optional(),
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
@@ -126,7 +111,6 @@ const terms = defineCollection({
 // Export collections
 export const collections = {
   reviews,
-  authors,
   blog,
   docs,
   videos,
