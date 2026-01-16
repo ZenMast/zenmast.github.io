@@ -8,7 +8,6 @@ export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
 export type VideosEntry = CollectionEntry<"videos">;
 export type HomeEntry = CollectionEntry<"home">;
-export type PortfolioEntry = CollectionEntry<"portfolio">;
 export type TermsEntry = CollectionEntry<"terms">;
 
 export type SearchableEntry =
@@ -16,7 +15,6 @@ export type SearchableEntry =
   | BlogEntry
   | DocsEntry
   | VideosEntry
-  | PortfolioEntry
   | TermsEntry;
 
 export type SocialLinks = {
