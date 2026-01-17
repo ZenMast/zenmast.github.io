@@ -10,9 +10,9 @@ let h3 = h4 * font_scale;
 let h2 = h3 * font_scale;
 let h1 = h2 * font_scale;
 
-let fontPrimary = "serif";
+let fontPrimary = "Inter";
 let fontPrimaryType = "serif";
-let fontSecondary = "open sans";
+let fontSecondary = "Noto Sans";
 let fontSecondaryType = "sans-serif";
 
 fontPrimary = fontPrimary
