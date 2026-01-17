@@ -1,15 +1,15 @@
 ---
 // Twinkling Star Background 
-const numStars = 1600;
-const stars = Array.from({ length: numStars }).map(() => ({
-  left: `${Math.random() * 100}%`,
-  top: `${Math.random() * 100}%`,
-  size: `${Math.random() * 2 + 1}px`,
-  delay: `${7 * Math.random()}s`,
-  // hsl: `hsl(${Math.random() * 360}, 100%, 50%)`, // background: ${hsl}; 
-}));
+// const numStars = 1600;
+// const stars = Array.from({ length: numStars }).map(() => ({
+//   left: `${Math.random() * 100}%`,
+//   top: `${Math.random() * 100}%`,
+//   size: `${Math.random() * 2 + 1}px`,
+//   delay: `${7 * Math.random()}s`,
+//   // hsl: `hsl(${Math.random() * 360}, 100%, 50%)`, // background: ${hsl}; 
+// }));
 ---
-<div
+<!-- <div
   class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden"
 >
   {
@@ -26,7 +26,7 @@ const stars = Array.from({ length: numStars }).map(() => ({
       />
     ))
   }
-</div> 
+</div>  -->
 
 <!-- Gradient Cycle Background -->
 <!-- <div
@@ -55,7 +55,7 @@ const stars = Array.from({ length: numStars }).map(() => ({
 </style> -->
 
 <!-- Dual Image Background -->
-<!-- <style>
+<style>
   html::before,
   html::after {
     content: "";
@@ -72,7 +72,7 @@ const stars = Array.from({ length: numStars }).map(() => ({
   }
 
   html::before {
-    background-image: url(/src/assets/backgrounds/day/IMG_3783.JPEG);
+    background-image: url(/src/assets/backgrounds/day/666.jpg);
     opacity: 1;
   }
 
@@ -81,11 +81,11 @@ const stars = Array.from({ length: numStars }).map(() => ({
   }
 
   html::after {
-    background-image: url(/src/assets/backgrounds/IMG_3780.JPEG);
+    background-image: url(/src/assets/backgrounds/mountains_night.JPEG);
     opacity: 0;
   }
 
   html.dark::after {
     opacity: 1;
   }
-</style> -->
+</style>
