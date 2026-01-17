@@ -76,6 +76,7 @@ const home = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       title: z.string(),
+      slogan: z.string().optional(),
       content: z.string(),
       button: z
         .object({
