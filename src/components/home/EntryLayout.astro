@@ -36,7 +36,7 @@ const { image, imageAlt, title, slogan, content, button } = entry.data;
             )
           }
           <h1 set:html={markdownify(title)} class="mb-2" />
-          <h4 set:html={markdownify(slogan)} class="mb-4" />
+          <p set:html={markdownify(slogan)} class="mb-4 text-xl" />
           <p set:html={markdownify(content)} class="mb-8" />
           <div class="flex justify-center mt-8">
             <Social
