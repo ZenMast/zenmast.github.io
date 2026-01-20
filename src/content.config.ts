@@ -47,19 +47,6 @@ const blog = defineCollection({
     }),
 });
 
-const docs = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/docs" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      pubDate: z.date().optional(),
-      modDate: z.date().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default(""),
-      hideToc: z.boolean().default(false),
-      hideNav: z.boolean().default(false),
-    }),
-});
-
 const videos = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/videos" }),
   schema: searchable.extend({
@@ -96,7 +83,6 @@ const terms = defineCollection({
 export const collections = {
   reviews,
   blog,
-  docs,
   videos,
   home,
   terms,

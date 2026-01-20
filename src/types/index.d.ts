@@ -5,7 +5,6 @@ export type GenericEntry = CollectionEntry<CollectionKey>;
 
 export type ReviewsEntry = CollectionEntry<"reviews">;
 export type BlogEntry = CollectionEntry<"blog">;
-export type DocsEntry = CollectionEntry<"docs">;
 export type VideosEntry = CollectionEntry<"videos">;
 export type HomeEntry = CollectionEntry<"home">;
 export type TermsEntry = CollectionEntry<"terms">;
@@ -13,7 +12,6 @@ export type TermsEntry = CollectionEntry<"terms">;
 export type SearchableEntry =
   | ReviewsEntry
   | BlogEntry
-  | DocsEntry
   | VideosEntry
   | TermsEntry;
 
