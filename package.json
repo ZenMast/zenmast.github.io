@@ -1,8 +1,8 @@
 {
-  "name": "Astrogon",
-  "version": "1.0.0",
-  "description": "Template.",
-  "author": "Jane Doe",
+  "name": "Zen Garden",
+  "version": "2.0.0",
+  "description": "Personal website based on an Astrogon template",
+  "author": "Ro Man",
   "license": "MIT",
   "packageManager": "npm@10.8.2",
   "scripts": {
