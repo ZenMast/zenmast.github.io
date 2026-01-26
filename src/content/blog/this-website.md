@@ -1,6 +1,6 @@
 ---
 title: This website
-description: Why I made a personal website and how.
+description: Why I made this website and how.
 date: 2026-01-26
 categories: [Tech]
 tags: [tech]
