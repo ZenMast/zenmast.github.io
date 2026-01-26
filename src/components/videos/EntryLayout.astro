@@ -50,15 +50,15 @@ const { title, description, youtubeId, tags } = entry.data;
           <!-- Description -->
           {
             description && (
-              <div class="col basis-full p-2 min-w-72">
+              <div class="glass rounded col basis-full p-2 min-w-72">
                 <div class="prose prose-lg max-w-none" set:html={markdownify(description)} />
               </div>
             )
           }
           <!-- Share -->
-          <div class="col basis-full p-2 min-w-72">
+          <!-- <div class="col basis-full p-2 min-w-72">
             <Share />
-          </div>
+          </div> -->
         </article>
       </div>
     </div>
