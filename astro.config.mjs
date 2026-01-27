@@ -12,7 +12,6 @@ import remarkMath from "remark-math";
 // https://astro.build/config
 export default defineConfig({
   site: "https://roman.top/",
-  base: "/",
   trailingSlash: "ignore",
   prefetch: {
     prefetchAll: true
