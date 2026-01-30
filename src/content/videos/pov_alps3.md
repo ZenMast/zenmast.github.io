@@ -1,7 +1,7 @@
 ---
 title: Motorcycle POV riding in French Alps
 description: Motorcycle POV riding in French Alps with engine sound in 2025
-date: 2025-01-26
+date: 2025-09-26
 youtubeId: CVLg8OwN7qI
 tags: [motorcycle, gopro, pov, long, relaxing]
 ---
