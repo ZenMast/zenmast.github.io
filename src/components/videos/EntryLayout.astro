@@ -51,7 +51,10 @@ const { title, description, youtubeId, tags } = entry.data;
           {
             description && (
               <div class="glass rounded col basis-full p-2 min-w-72">
-                <div class="prose prose-lg max-w-none" set:html={markdownify(description)} />
+                <div
+                  class="prose prose-lg max-w-none dark:prose-invert"
+                  set:html={markdownify(description)}
+                />
               </div>
             )
           }
